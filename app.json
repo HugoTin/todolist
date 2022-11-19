@@ -8,19 +8,11 @@
     "finished": true
   },
   {
-    "name": "Jogar",
-    "finished": true
+    "name": "test",
+    "finished": false
   },
   {
     "name": "oi",
-    "finished": false
-  },
-  {
-    "name": "5",
-    "finished": false
-  },
-  {
-    "name": "test",
     "finished": false
   }
 ]

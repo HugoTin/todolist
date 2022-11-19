@@ -3,7 +3,7 @@ import json
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/", methods=["POST"])
 def home():
     #template/home.html
     with open("app.json") as f:
@@ -25,7 +25,7 @@ def create():
     with open("app.json", 'w') as f:
         json.dump(tasks, f, indent = 2)
     
-    return home()
+    return render_template('new.html', tasks=tasks)
 
 
-app.run(debug = True)
+app.run(debug=True, port=42424)
