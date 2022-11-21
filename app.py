@@ -3,7 +3,7 @@ import json
 
 app = Flask(__name__)
 
-@app.route("/", methods=["POST"])
+@app.route("/", methods=["POST","GET"])
 def home():
     #template/home.html
     with open("app.json") as f:
@@ -27,5 +27,19 @@ def create():
     
     return render_template('new.html', tasks=tasks)
 
+@app.route("/excluir", methods=["POST"])
+def excluir():
+    name = request.form['task']
+    with open("app.json") as f:
+        tasks = json.load(f)
 
-app.run(debug=True, port=42424)
+    for x, task in enumerate(tasks):
+        if task["name"] == name:
+            tasks.pop(x)
+
+    with open("app.json", 'w') as f:
+        json.dump(tasks, f, indent = 2)
+    
+    return render_template('new.html', tasks=tasks)
+
+app.run(debug=True)

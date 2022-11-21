@@ -5,8 +5,8 @@ html, body {
 }
 
 
-
-.container {
+/*FORMULARIO E BOTAO*/
+.search {
     text-align: right;
 
     margin-top: 10px;
@@ -14,18 +14,16 @@ html, body {
 
     padding-right: 60%;
 }
-
 .btn-primary {
     margin-top: 10px;
 }
 
 
-
+/*TABELA*/
 td, th {
     color: #fff;
 }
-
-#table-style {
+.table-style {
     margin-top: 25px;
     margin-left: 25px;
     background-color: #333;
@@ -33,25 +31,29 @@ td, th {
     border-collapse: collapse;
     width: 50%;
 }
-
-#table-style td, #table-style th {
+.table-style td, #table-style th {
     border: 1px solid #333;
     padding: 8px;
 }
-
-#table-style tr:nth-child(even) {
+.table-style tr:nth-child(even) {
     background-color: #666
 }
-
-#table-style tr:hover {
+.table-style tr:hover {
     background-color: #888
 }
-
-#table-style th {
+.table-style th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
     background-color: #000;
     color: white;
     cursor: pointer;
+}
+
+
+/*BUTAO EXCLUIR*/
+.excluir {
+    margin-top: 0px;
+    padding: 0px 0px;
+    width: 20%;
 }
