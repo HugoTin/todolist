@@ -1,10 +1,6 @@
 [
   {
-    "name": "Estudar",
+    "name": "TEST",
     "finished": false
-  },
-  {
-    "name": "Dormir",
-    "finished": true
   }
 ]
