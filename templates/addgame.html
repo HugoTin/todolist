@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Adicionar Jogo</title>
+</head>
+<body>
+    <form class="container search" action="create" method="POST">
+        <input name='name' class = "form-control">
+
+        <input name="platinum" type="checkbox" ><label>Platinado</label><br>
+
+        <label>Escolha</label>
+        <select name="status" id="status">
+            <option value="Finalizado">Finalizado</option>
+            <option value="Jogando">Jogando</option>
+            <option value="Rejogando">Rejogando</option>
+            <option value="Abandonado">Abandonado</option>
+            <option value="Desejado">DesejadoCRU</option>
+        </select>
+
+        <br><button class="btn btn-primary"  >Salvar</button>
+    </form>
+</body>
+</html>

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 import json
 
 app = Flask(__name__)
@@ -6,17 +6,29 @@ app = Flask(__name__)
 @app.route("/", methods=["POST","GET"])
 def home():
     #template/home.html
-    with open("app.json") as f:
+    with open("app.json", "r") as f:
         tasks = json.load(f)
     return render_template('home.html', tasks=tasks)
 
+
+
 @app.route("/create", methods=["POST"])
 def create():
-    name = request.form['name']
+    name = request.form['name'].upper()
+    status = request.form['status']
+
+    try:
+        if request.form['platinum'] == "on":
+            platinum = True
+    except:
+        platinum = False
+
     task = {
         "name" :  name,
-        "finished": False
+        "platinum": platinum,
+        "status": status
     }
+
     with open("app.json") as f:
         tasks = json.load(f)
 
@@ -25,11 +37,11 @@ def create():
     with open("app.json", 'w') as f:
         json.dump(tasks, f, indent = 2)
     
-    return render_template('new.html', tasks=tasks)
+    return redirect('/')
 
 @app.route("/excluir", methods=["POST"])
 def excluir():
-    name = request.form['task']
+    name = request.form['task'].upper()
     with open("app.json") as f:
         tasks = json.load(f)
 
@@ -40,6 +52,12 @@ def excluir():
     with open("app.json", 'w') as f:
         json.dump(tasks, f, indent = 2)
     
-    return render_template('new.html', tasks=tasks)
+    return redirect('/')
+
+@app.route("/add", methods=["POST"])
+def add():
+    with open("app.json") as f:
+        tasks = json.load(f)
+    return render_template('addgame.html')
 
 app.run(debug=True)

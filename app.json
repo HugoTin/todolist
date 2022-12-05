@@ -1,6 +1,17 @@
 [
   {
-    "name": "TEST",
-    "finished": false
+    "name": "ELDER",
+    "platinum": true,
+    "status": "Jogando"
+  },
+  {
+    "name": "GOD OF WAR",
+    "platinum": true,
+    "status": "Jogando"
+  },
+  {
+    "name": "OI",
+    "platinum": true,
+    "status": "Finalizado"
   }
 ]

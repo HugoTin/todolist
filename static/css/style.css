@@ -1,13 +1,13 @@
 html, body {
     height: 100%;
     width: 100%;
-    background-color: #000;
+    background-color: #fff;
 }
 
 
 /*FORMULARIO E BOTAO*/
 .search {
-    text-align: right;
+    text-align: left;
 
     margin-top: 10px;
     margin-left: 20px;
@@ -17,7 +17,6 @@ html, body {
 .btn-primary {
     margin-top: 10px;
 }
-
 
 /*TABELA*/
 table {
