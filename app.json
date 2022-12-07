@@ -1,17 +1,8 @@
 [
   {
-    "name": "ELDER",
-    "platinum": true,
+    "id": 1,
+    "name": "TEST",
+    "platinum": false,
     "status": "Jogando"
-  },
-  {
-    "name": "GOD OF WAR",
-    "platinum": true,
-    "status": "Jogando"
-  },
-  {
-    "name": "OI",
-    "platinum": true,
-    "status": "Finalizado"
   }
 ]

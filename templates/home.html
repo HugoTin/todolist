@@ -10,25 +10,32 @@
 </head>
 <body>
     <form class="container search search-home" action="add" method="POST">
-        <button class="btn btn-primary"  >ADICIONAR</button>
+        <button class="btn btn-primary">ADICIONAR</button>
     </form>
     
-    <table class="table table-hover table-style">
+    <table class="table table-hover table-style center">
         <tr>
             <td>Jogos</td>
             <td>Platinado</td>
             <td>Status</td>
         </tr>
-        {% for task in tasks:%}
+        {% for game in games:%}
         <tr>
             <form class="container" action="excluir" method="POST">
                 <td>
-                    <button class="form-control btn-close btn-close-white"></button>
-                    <input type="hidden" name="task" value="{{ task['name'] }}">
-                    {{ task["name"] }}
+                    {{game["name"] }}
                 </td>
-                <td>{{task["platinum"]}}</td>
-                <td>{{task["status"]}}</td>
+                <td>{{game["platinum"]}}</td>
+                <td>{{game["status"]}}</td>
+            
+                <td>
+                    <button class="button1">X</button>
+                    <input type="hidden" name="id" value="{{ game['id'] }}">
+                </form>
+                <form class="container" action="edit" method="POST">
+                    <button class="button1">EDIT</button>
+                    <input type="hidden" name="id" value="{{ game['id'] }}">
+                </td>
             </form>
         </tr>
         {%endfor%}

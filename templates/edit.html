@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Adicionar Jogo</title>
+</head>
+<body>
+    <form class="container search" action="editar" method="POST">
+        <input name='name' class = "form-control" value="{{games['name']}}">
+
+        <input name="platinum" type="checkbox" {{"checked" if games["platinum"] == true}}><label>Platinado</label><br>
+
+        <label>Escolha</label>
+        <select name="status" id="status">
+            <option value="Finalizado" {{'selected' if games["status"] == 'Finalizado'}}>Finalizado</option>
+            <option value="Jogando" {{'selected' if games["status"] == "Jogando"}}>Jogando</option>
+            <option value="Rejogando" {{'selected' if games["status"] == "Rejogando"}}>Rejogando</option>
+            <option value="Abandonado" {{'selected' if games["status"] == "Abandonado"}}>Abandonado</option>
+            <option value="Desejado" {{'selected' if games["status"] == "Desejado"}}>Desejado</option>
+        </select>
+
+        <br><button class="btn btn-primary">Salvar Edição</button>
+        <input type="hidden" name="id" value="{{ games['id'] }}">
+    </form>
+</body>
+</html>
